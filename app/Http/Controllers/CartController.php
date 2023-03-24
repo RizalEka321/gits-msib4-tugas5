@@ -88,4 +88,16 @@ class CartController extends Controller
         Cart::destroy($id);
         return back();
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Cart  $cart
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy_all(Cart $cart)
+    {
+        Cart::truncate();
+        return back();
+    }
 }

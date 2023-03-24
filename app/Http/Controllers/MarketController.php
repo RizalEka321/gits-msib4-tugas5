@@ -17,8 +17,8 @@ class MarketController extends Controller
     public function index()
     {
         $title = 'Tokoku||Market';
-        $category = Category::all();
-        $product = Product::with('category')->get();
+        $category = Category::paginate(5);
+        $product = Product::paginate(5);
         return view('market.index', compact('title','product','category'));
     }
 
@@ -30,7 +30,7 @@ class MarketController extends Controller
     public function create($id)
     {
         $title = 'Tokoku||Masukkan Produk';
-        $list = Product::all();
+        $list = Product::paginate(5);
         $product = Product::find($id);
         return view('market.add', compact('title','product','list'));
     }

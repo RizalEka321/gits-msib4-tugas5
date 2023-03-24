@@ -17,21 +17,21 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+// Market(Home)
 Route::get('/', [MarketController::class, 'index'])->name('market');
-Route::get('/add/{id}', [MarketController::class, 'create'])->name('market.add');
-Route::post('/add/tambah', [MarketController::class, 'store'])->name('market.tambah');
-
+Route::get('/detail/{id}', [MarketController::class, 'create'])->name('market.detail');
+Route::post('/detail/tambah', [MarketController::class, 'store'])->name('market.tambah');
+// Keranjang(Cart)
 Route::get('/keranjang', [CartController::class, 'index'])->name('keranjang');
 Route::get('/keranjang/hapus/{id}', [CartController::class, 'destroy'])->name('keranjang.hapus');
-
-
-
+Route::get('/keranjang/hapus', [CartController::class, 'destroy_all'])->name('keranjang.hapussemua');
+// Kategori
 Route::get('/kategori', [CategoryController::class, 'index'])->name('kategori');
 Route::post('/kategori/tambah', [CategoryController::class, 'store'])->name('kategori.tambah');
 Route::get('/kategori/edit/{id}', [CategoryController::class, 'edit'])->name('kategori.edit');
 Route::put('/kategori/{id}', [CategoryController::class, 'update'])->name('kategori.update');
 Route::get('/kategori/hapus/{id}', [CategoryController::class, 'destroy'])->name('kategori.hapus');
-
+// Produk
 Route::get('/produk', [ProductController::class, 'index'])->name('produk');
 Route::post('/produk/tambah', [ProductController::class, 'store'])->name('produk.tambah');
 Route::get('/produk/edit/{id}', [ProductController::class, 'edit'])->name('produk.edit');

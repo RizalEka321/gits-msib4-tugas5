@@ -42,7 +42,7 @@
                     @foreach ($list as $p)
                         <div class="col">
                             <div class="card h-100">
-                                <a href="{{ Route('market.add', $p->id) }}">
+                                <a href="{{ Route('market.detail', $p->id) }}">
                                     <img src="https://placeimg.com/250/250/nature" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $p->name }}</h5>

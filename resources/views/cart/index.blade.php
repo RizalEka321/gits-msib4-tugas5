@@ -22,7 +22,7 @@
                             @foreach ($cart as $c)
                                 <tr>
                                     <td>
-                                        <a href="{{ Route('market.add', $c->product->id) }}"
+                                        <a href="{{ Route('market.detail', $c->product->id) }}"
                                             class="btn btn-default">{{ $c->product->name }}</a>
                                     </td>
                                     <td>{{ number_format($c->product->price, 0, '.', '.') }}</td>
@@ -45,7 +45,7 @@
                                 <th>Jumlah Barang :</th>
                                 <th> Total ({{ $qty }} Produk)</th>
                                 <th class="text-center">
-                                    <a href="#" class="cart-btn py-2 px-4">Hapus Semua</a>
+                                    <a href="{{ Route('keranjang.hapussemua') }}" class="cart-btn py-2 px-4">Hapus Semua</a>
                                 </th>
                             </tr>
                         </table>
