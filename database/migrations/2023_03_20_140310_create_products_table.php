@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('name');
-            $table->unsignedInteger('price')->default(0);
+            $table->unsignedbigInteger('price')->default(0);
             $table->text('description')->nullable(true);
             $table->timestamps();
 
