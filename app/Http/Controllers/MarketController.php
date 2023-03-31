@@ -51,7 +51,10 @@ class MarketController extends Controller
 
         $cek = Cart::where('product_id', $request->product_id)->first();
         if ($cek) {
-            Cart::where('id', $cek->id)->update(['qty'=>$request->qty + $cek->qty]);
+            Cart::where('id', $cek->id)->update([
+                'qty'=>$request->qty + $cek->qty,
+                'sub_total'=>($request->price * $request->qty) + $cek->sub_total,
+        ]);
         } else {
             Cart::create([
                 'qty'     => $request->qty,
